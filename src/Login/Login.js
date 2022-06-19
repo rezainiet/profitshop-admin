@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
@@ -36,8 +36,8 @@ const Login = () => {
     };
 
     if (eUser || user || gUser) {
-        navigate('/admin')
         navigate(from, { replace: true });
+        navigate('/admin')
     }
 
     return (
