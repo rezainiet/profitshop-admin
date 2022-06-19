@@ -7,7 +7,6 @@ const PurchasedInfo = ({ order, index }) => {
     const [selected, setSelected] = useState({ status });
 
     const handleChange = (event) => {
-        console.log(event.target.value);
         const newValue = event.target.value;
         setSelected(event.target.value);
 
@@ -20,11 +19,10 @@ const PurchasedInfo = ({ order, index }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
 
             });
         const date = new Date().toISOString().slice(0, 10);
-        console.log(date);
         const successPackageInfo = { packageName, buyer, price, date, perAds, ads };
 
         if (newValue === "success") {
@@ -36,7 +34,9 @@ const PurchasedInfo = ({ order, index }) => {
                 body: JSON.stringify(successPackageInfo)
             })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    // console.log(data)
+                })
                 .then(window.location.reload())
         }
     };

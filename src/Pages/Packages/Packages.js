@@ -3,7 +3,6 @@ import React from 'react';
 const Packages = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('submitted')
     }
     return (
         <div className="flex items-center justify-center">
