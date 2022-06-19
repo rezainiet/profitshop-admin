@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 const PurchasedInfo = ({ order, index }) => {
-    const { packageName, buyer, status, transactionId, price, _id } = order;
+    const { packageName, buyer, status, transactionId, price, _id, perAds, ads } = order;
 
     const [selected, setSelected] = useState({ status });
 
@@ -25,7 +25,7 @@ const PurchasedInfo = ({ order, index }) => {
             });
         const date = new Date().toISOString().slice(0, 10);
         console.log(date);
-        const successPackageInfo = { packageName, buyer, price, date };
+        const successPackageInfo = { packageName, buyer, price, date, perAds, ads };
 
         if (newValue === "success") {
             fetch(`http://localhost:4000/successBuy`, {
@@ -36,7 +36,8 @@ const PurchasedInfo = ({ order, index }) => {
                 body: JSON.stringify(successPackageInfo)
             })
                 .then(res => res.json())
-                .then(data => console.log(data));
+                .then(data => console.log(data))
+                .then(window.location.reload())
         }
     };
 
