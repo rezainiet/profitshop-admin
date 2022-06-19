@@ -3,6 +3,7 @@ import Homepage from "./HomePage/Homepage";
 import Login from "./Login/Login";
 import RequireAuth from "./Login/RequireAuth/RequireAuth";
 import AllUsers from "./Pages/AllUsers/AllUsers";
+import ManagePurchase from "./Pages/ManagePurchase/ManagaePurchase";
 import Packages from "./Pages/Packages/Packages";
 import Navbar from "./Shared/Navbar/Navbar";
 
@@ -17,6 +18,11 @@ function App() {
           <Route path="/admin" element={
             <RequireAuth>
               <Homepage></Homepage>
+            </RequireAuth>} >
+          </Route>
+          <Route path="/manage-purchase" element={
+            <RequireAuth>
+              <ManagePurchase></ManagePurchase>
             </RequireAuth>} >
           </Route>
           <Route path="/all-user" element={
