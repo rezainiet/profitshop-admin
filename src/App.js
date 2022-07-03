@@ -1,11 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./HomePage/Homepage";
 import Login from "./Login/Login";
 import RequireAuth from "./Login/RequireAuth/RequireAuth";
+import AddAd from "./Pages/AddAd/AddAd";
 import AllUsers from "./Pages/AllUsers/AllUsers";
+import Homepage from "./Pages/HomePage/Homepage";
 import ManagePurchase from "./Pages/ManagePurchase/ManagaePurchase";
+import ManageWithdraw from "./Pages/ManageWithdraw/ManageWithdraw";
 import Packages from "./Pages/Packages/Packages";
 import Navbar from "./Shared/Navbar/Navbar";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -25,6 +29,11 @@ function App() {
               <ManagePurchase></ManagePurchase>
             </RequireAuth>} >
           </Route>
+          <Route path="/manage-withdraw" element={
+            <RequireAuth>
+              <ManageWithdraw />
+            </RequireAuth>} >
+          </Route>
           <Route path="/all-user" element={
             <RequireAuth>
               <AllUsers />
@@ -35,8 +44,14 @@ function App() {
               <Packages />
             </RequireAuth>} >
           </Route>
+          <Route path="/add-ads" element={
+            <RequireAuth>
+              <AddAd />
+            </RequireAuth>} >
+          </Route>
         </Routes>
       </h1>
+      <ToastContainer />
     </div>
   );
 }

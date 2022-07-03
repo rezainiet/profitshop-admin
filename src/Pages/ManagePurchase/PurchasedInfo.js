@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const PurchasedInfo = ({ order, index }) => {
     const { packageName, buyer, status, transactionId, price, _id, perAds, ads } = order;
@@ -10,7 +11,7 @@ const PurchasedInfo = ({ order, index }) => {
         const newValue = event.target.value;
         setSelected(event.target.value);
 
-        fetch(`http://localhost:4000/getInfo/${_id}`, {
+        fetch(`https://profitshop.herokuapp.com/getInfo/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -19,15 +20,16 @@ const PurchasedInfo = ({ order, index }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
+                toast.success('Package updated.')
 
             });
         const date = new Date().toISOString().slice(0, 10);
         const successPackageInfo = { packageName, buyer, price, date, perAds, ads };
 
         if (newValue === "success") {
-            fetch(`http://localhost:4000/successBuy`, {
-                method: 'POST',
+            fetch(`https://profitshop.herokuapp.com/successBuy/${buyer}`, {
+                method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
                 },
@@ -35,9 +37,10 @@ const PurchasedInfo = ({ order, index }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data)
+                    console.log(data)
+                    toast.success('Package Successfully bought!');
                 })
-                .then(window.location.reload())
+            // .then(window.location.reload())
         }
     };
 

@@ -22,22 +22,22 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card flex items-center justify-center h-28 bg-green-400 text-primary-content">
+                {/* <div className="card flex items-center justify-center h-28 bg-green-400 text-primary-content">
                     <div className="card-body">
                         <h2 className="card-title">Manage Reviews!</h2>
                         <div className="card-actions justify-end">
                             <button className="btn btn-xs btn-warning" onClick={() => navigate('/reviews')}>manage</button>
                         </div>
                     </div>
-                </div>
-                <div className="card flex items-center justify-center h-28 bg-green-600 text-primary-content">
+                </div> */}
+                {/* <div className="card flex items-center justify-center h-28 bg-green-600 text-primary-content">
                     <div className="card-body">
                         <h2 className="card-title">Manage blogs!</h2>
                         <div className="card-actions justify-end">
                             <button className="btn btn-xs btn-warning" onClick={() => navigate('/blogs')}>manage</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="card flex items-center justify-center h-28 bg-green-800 text-primary-content">
                     <div className="card-body">
                         <h2 className="card-title">Manage Users!</h2>
@@ -46,11 +46,19 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card flex items-center justify-center h-28 bg-purple-400 text-primary-content">
+                {/* <div className="card flex items-center justify-center h-28 bg-purple-400 text-primary-content">
                     <div className="card-body">
                         <h2 className="card-title">Manage Packages!</h2>
                         <div className="card-actions justify-end">
                             <button className="btn btn-xs btn-warning" onClick={() => navigate('/packages')}>manage</button>
+                        </div>
+                    </div>
+                </div> */}
+                <div className="card flex items-center justify-center h-28 bg-purple-400 text-primary-content">
+                    <div className="card-body">
+                        <h2 className="card-title">Add Ads!</h2>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-xs btn-warning" onClick={() => navigate('/add-ads')}>manage</button>
                         </div>
                     </div>
                 </div>

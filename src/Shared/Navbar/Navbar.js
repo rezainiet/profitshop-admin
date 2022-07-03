@@ -11,11 +11,12 @@ const Navbar = () => {
     }
     const navLinks = <>
         <li><CustomLink to='/admin' >Home</CustomLink></li>
-        <li><CustomLink to='/reviews' >Reviews</CustomLink></li>
-        <li><CustomLink to='/blogs' >Blogs</CustomLink></li>
+        {/* <li><CustomLink to='/reviews' >Reviews</CustomLink></li> */}
+        {/* <li><CustomLink to='/blogs' >Blogs</CustomLink></li> */}
         <li><CustomLink to='/manage-withdraw' >Manage Withdrawal</CustomLink></li>
         <li><CustomLink to='/all-user' >All users</CustomLink></li>
         <li><CustomLink to='/packages' >Packages</CustomLink></li>
+        <li><CustomLink to='/add-ads' >Add an Ads</CustomLink></li>
         {
             user && <button className='btn btn-ghost text-secondary' onClick={handleLogout}>Logout</button>
         }

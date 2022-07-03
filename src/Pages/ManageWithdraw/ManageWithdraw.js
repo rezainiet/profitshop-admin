@@ -1,29 +1,29 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import PurchasedInfo from './PurchasedInfo';
+import WithdrawalInfo from './WithdrawalInfo';
 
-const ManagePurchase = () => {
+const ManageWithdraw = () => {
 
-    const [orders, setOrders] = useState([]);
+    const [withdrawal, setWithdrawal] = useState([]);
 
     useEffect(() => {
-        fetch('https://profitshop.herokuapp.com/purchased')
+        fetch('https://profitshop.herokuapp.com/getWithdraw')
             .then(res => res.json())
-            .then(data => setOrders(data));
+            .then(data => setWithdrawal(data));
     }, []);
     return (
         <div>
             <div className="overflow-x-auto">
-                <table className="table w-full text-green-500">
+                <table className="table w-full">
                     {/* <!-- head --> */}
 
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Transaction ID</th>
-                            <th>Price</th>
-                            <th>Email</th>
-                            <th>Package Name</th>
+                            <th>Method</th>
+                            <th>Amount</th>
+                            <th>Address</th>
+                            <th>User</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -32,7 +32,7 @@ const ManagePurchase = () => {
                         {/* <!-- row 1 --> */}
 
                         {
-                            orders.map((order, index) => <PurchasedInfo index={index} order={order} key={order._id}></PurchasedInfo>)
+                            withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
                         }
                     </tbody>
                 </table>
@@ -41,4 +41,4 @@ const ManagePurchase = () => {
     );
 };
 
-export default ManagePurchase;
+export default ManageWithdraw;
