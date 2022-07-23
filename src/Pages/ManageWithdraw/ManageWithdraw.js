@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import auth from '../../firebase.init';
 import WithdrawalInfo from './WithdrawalInfo';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const ManageWithdraw = () => {
+    const [user] = useAuthState(auth);
+
+    // thi is for  withdraw section. for only Masud Reza
+    //  h ythere I'm Masud Rrza. only I can see all of the thinks
 
     const [withdrawal, setWithdrawal] = useState([]);
 
@@ -27,14 +33,16 @@ const ManageWithdraw = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    {
+                        user?.email === "masudrezaog@gmail.com" && <tbody>
 
-                        {/* <!-- row 1 --> */}
+                            {/* <!-- row 1 --> */}
 
-                        {
-                            withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
-                        }
-                    </tbody>
+                            {
+                                withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
+                            }
+                        </tbody>
+                    }
                 </table>
             </div>
         </div>
