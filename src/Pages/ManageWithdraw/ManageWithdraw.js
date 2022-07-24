@@ -33,15 +33,25 @@ const ManageWithdraw = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+
+                        {/* <!-- row 1 --> */}
+
+                        {
+                            withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
+                        }
+                    </tbody>
+
                     {
-                        user?.email === "masudrezaog@gmail.com" && <tbody>
+                        // user?.email === "masudrezaog@gmail.com" && <tbody>
 
-                            {/* <!-- row 1 --> */}
+                        //     {/* <!-- row 1 --> */}
 
-                            {
-                                withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
-                            }
-                        </tbody>
+                        //     {
+                        //         withdrawal.map((withdraw, index) => <WithdrawalInfo index={index} withdraw={withdraw} key={withdraw._id}></WithdrawalInfo>)
+                        //     }
+                        // </tbody>
                     }
                 </table>
             </div>
