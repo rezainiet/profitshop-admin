@@ -5,7 +5,7 @@ const AddAd = () => {
         event.preventDefault();
         const ads = { title: event.target.name.value, videoID: event.target.videoID.value };
 
-        fetch('https://profitshop.herokuapp.com/addAds', {
+        fetch('https://tiusareza.herokuapp.com/addAds', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

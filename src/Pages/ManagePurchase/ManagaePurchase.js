@@ -7,7 +7,7 @@ const ManagePurchase = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('https://profitshop.herokuapp.com/purchased')
+        fetch('https://tiusareza.herokuapp.com/purchased')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);

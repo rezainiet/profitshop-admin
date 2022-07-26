@@ -11,7 +11,7 @@ const PurchasedInfo = ({ order, index }) => {
         const newValue = event.target.value;
         setSelected(event.target.value);
 
-        fetch(`https://profitshop.herokuapp.com/getInfo/${_id}`, {
+        fetch(`https://tiusareza.herokuapp.com/getInfo/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -28,7 +28,7 @@ const PurchasedInfo = ({ order, index }) => {
         const successPackageInfo = { packageName, buyer, price, date, perAds, ads };
 
         if (newValue === "success") {
-            fetch(`https://profitshop.herokuapp.com/successBuy/${buyer}`, {
+            fetch(`https://tiusareza.herokuapp.com/successBuy/${buyer}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

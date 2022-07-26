@@ -8,7 +8,7 @@ const AllUsers = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        const url = `https://profitshop.herokuapp.com/users`
+        const url = `https://tiusareza.herokuapp.com/users`
         fetch(url)
             .then(res => res.json())
             .then(data => setUsers(data));

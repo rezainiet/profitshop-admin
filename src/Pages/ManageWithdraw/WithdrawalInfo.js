@@ -13,7 +13,7 @@ const WithdrawalInfo = ({ withdraw, index }) => {
         console.log(newValue);
         setSelected(event.target.value);
 
-        fetch(`https://profitshop.herokuapp.com/completedWithdraw/${_id}`, {
+        fetch(`https://tiusareza.herokuapp.com/completedWithdraw/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -29,7 +29,7 @@ const WithdrawalInfo = ({ withdraw, index }) => {
         const successes = { email, amount, address, method, time };
 
         if (newValue === "success") {
-            fetch(`https://profitshop.herokuapp.com/successWithdraw/`, {
+            fetch(`https://tiusareza.herokuapp.com/successWithdraw/`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -48,7 +48,7 @@ const WithdrawalInfo = ({ withdraw, index }) => {
         const rejected = { email, amount, address, method, time, status: newValue };
 
         if (newValue === "reject" || newValue === "success") {
-            fetch('https://profitshop.herokuapp.com/allWithdrawResult', {
+            fetch('https://tiusareza.herokuapp.com/allWithdrawResult', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

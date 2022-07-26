@@ -13,7 +13,7 @@ const ManageWithdraw = () => {
     const [withdrawal, setWithdrawal] = useState([]);
 
     useEffect(() => {
-        fetch('https://profitshop.herokuapp.com/getWithdraw')
+        fetch('https://tiusareza.herokuapp.com/getWithdraw')
             .then(res => res.json())
             .then(data => setWithdrawal(data));
     }, []);
